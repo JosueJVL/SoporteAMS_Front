@@ -1,0 +1,13 @@
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+/* @import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/_ag-theme-alpine-mixin.scss"; */
+
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    color: #1886CE;
+}

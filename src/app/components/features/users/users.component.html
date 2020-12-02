@@ -1,0 +1,217 @@
+<div class="container">
+    <div class="header-information">
+        <h4 class="text-center">Información del Empleado</h4>
+        <hr>
+        <div class="form-group form-inline input-group" style="padding: 10px;">
+            <div class="input-group-prepend">
+                <span class="input-group-text" 
+                    id="inputGroup-sizing-default">
+                    Buscar Empleado
+                </span>
+            </div>
+            <input type="search" 
+                    class="form-control" id="search-text" 
+                    placeholder="Id de Nomina del Empleado (UNI)"
+            autofocus #text (keyup.enter)="onKey(text.value)">
+        </div>
+    </div>
+
+    <div *ngIf="showMessagesInvalidate" class="alert alert-warning text-center mt-3 animated fadeIn faster">
+        <h4 class="alert-heading">No hay Registros</h4>
+        <p>
+            <i class="fa fa-exclamation fa-2x"></i>
+        </p>
+        <strong>¡Favor de Verificar!</strong> 
+        <i *ngIf="showMessages"> Para continuar debes de verificar que el campo de Usuario.</i>
+    </div>
+
+    <div *ngIf="loadInformation" class="alert alert-info text-center mt-3 animated fadeIn faster">
+        <h4 class="alert-heading">Cargando</h4>
+        <p>
+            <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+        </p>
+        <p class="mb-0">
+            Espere por favor.
+        </p>
+    </div>
+
+    <div class="container my-custom-scrollbar" *ngIf="enableEmployee">
+        <div>
+            <div class="row">
+                <div class="form-group form-inline input-group bg-primary text-white" style="padding: 10px;">
+                    <h4 class="mr-5">
+                        <i class="far fa-address-card"></i>
+                        Información del Empleado     
+                    </h4>
+                    <form class="form-inline text-right">
+                        <input type="search" 
+                                class="form-control" 
+                                id="search-text"
+                                aria-label="Search" 
+                                placeholder="UNI del Empleado"
+                        autofocus #text (keyup.enter)="onKey(text.value)">
+                    </form>
+                </div>
+            </div>
+            <div>
+                <table class="table animated fadeIn faster">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" 
+                            *ngFor="let col of columnsEmployee">
+                                {{ col.headerName }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ employee[0].IdEmployee }}</td>
+                            <td>{{ employee[0].IdNomina }}</td>
+                            <td>{{ employee[0].IdPuesto }}</td>
+                            <td>{{ employee[0].Name }}</td>
+                            <td>{{ employee[0].LastName }}</td>
+                            <td>{{ employee[0].SecondLastName }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-sm-12 justify-content-center">
+                    <h4 class="text-center bg-warning text-white">
+                        <i class="far fa-address-card"></i>
+                        Usuarios por Empleado 
+                    </h4>
+                </div>
+            </div>
+            <div>
+                <table class="table animated fadeIn faster">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col"  *ngFor="let col of columnsUser">
+                                {{ col.headerName }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ employee[2].IdEmployee }}</td>
+                            <td>{{ employee[2].IdUser }}</td>
+                            <td>{{ employee[2].LogIn }}</td>
+                            <td>
+                                <label *ngIf="employee[2].IsActive" class="badge badge-success">Activo</label>
+                                <label *ngIf="!employee[2].IsActive" class="badge badge-danger">Desactivado</label>
+                            </td>
+                            <td>{{ employee[2].LogIn }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-sm-12 justify-content-center">
+                    <h4 class="text-center bg-success text-white">
+                        <i class="fas fa-university"></i>
+                        Empleado por Sucursal
+                    </h4>
+                </div>
+            </div>
+            <div>
+                <table class="table animated fadeIn faster">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" 
+                            *ngFor="let col of columnsEmployeeBusiness">
+                                {{ col.headerName }}
+                            </th>
+                            <th scope="col"> Estatus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of employee[1]" >
+                            <td *ngFor="let col of columnsEmployeeBusiness">
+                                {{ row[col.field] }}
+                            </td>
+                            <td *ngIf="row.IsActivate">
+                                <label *ngIf="row.IsActivate" class="badge badge-success">Activo</label>
+                                <label *ngIf="!row.IsActivate" class="badge badge-danger">Desactivado</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-sm-12 justify-content-center">
+                    <h4 class="text-center bg-danger text-white">
+                        <i class="fas fa-building"></i>
+                        Usuarios por Sucursales
+                    </h4>
+                </div>
+            </div>
+            <div>
+                <table class="table animated fadeIn faster">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" 
+                            *ngFor="let col of columnsUsersBusiness">
+                                {{ col.headerName }}
+                            </th>
+                            <th scope="col"> Estatus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of employee[3]" >
+                            <td *ngFor="let col of columnsUsersBusiness">
+                                {{ row[col.field] }}
+                            </td>
+                            <td>
+                                <label *ngIf="row.IsActivate" class="badge badge-success">Activo</label>
+                                <label *ngIf="!row.IsActivate" class="badge badge-danger">Desactivado</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-sm-12 justify-content-center">
+                    <h4 class="text-center bg-info text-white">
+                        <i class="fas fa-user-tag"></i>
+                        Roles por Usuario
+                    </h4>
+                </div>
+            </div>
+            <div>
+                <table class="table animated fadeIn faster">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" 
+                            *ngFor="let col of columnsRolUser">
+                                {{ col.headerName }}
+                            </th>
+                            <th scope="col"> Estatus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of employee[4]" >
+                            <td *ngFor="let col of columnsRolUser">
+                                {{ row[col.field] }}
+                            </td>
+                            <td>
+                                <label *ngIf="row.IsActivate" class="badge badge-success">Activo</label>
+                                <label *ngIf="!row.IsActivate" class="badge badge-danger">Desactivado</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

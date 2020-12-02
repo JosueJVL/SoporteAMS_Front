@@ -1,0 +1,23 @@
+.header-information{
+    /* background-color: lightskyblue; */
+    top: 0;
+    position: sticky;
+}
+
+.my-custom-scrollbar {
+    position: sticky;
+    height: 500px;
+    overflow: auto;
+}
+
+.my-custom-scrollbar thead th {
+    position: sticky;
+    top: 0;
+    font-size: 15px;
+    font-style: normal;
+}
+
+.my-custom-scrollbar tbody td {
+    font-size: 14px;
+    font-style: normal;
+}

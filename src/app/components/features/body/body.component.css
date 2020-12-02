@@ -1,0 +1,35 @@
+.my-custom-scrollbar {
+    position: sticky;
+    height: 400px;
+    overflow: auto;
+}
+
+.my-custom-scrollbar thead th {
+    position: sticky;
+    top: 0;
+    /* background-color: lightskyblue; */
+    background-color: #60C1FC;
+    /* background-color: #3393FF; */
+    font-size: 15px;
+    font-style: normal;
+}
+
+.my-custom-scrollbar tbody td {
+    font-size: 14px;
+    font-style: normal;
+}
+
+.table thead > tr 
+{
+    color: white;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    /* background-color: lightyellow */
+    background-color: #BFE5FC;
+ }
+
+ .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #A5CCF9;
+    /* background-color: #33C4FF; */
+}
