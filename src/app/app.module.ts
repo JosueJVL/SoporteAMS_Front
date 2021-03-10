@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeService } from './components/home/services/HomeService';
 import { BodyService } from './components/features/body/body.component.service';
 import { UserService } from './components/features/users/user.component.service';
+import { UsersServices } from './components/features/user/user.component.service';
+import { CacheService } from './cache.service';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -24,6 +26,8 @@ import { FilterPipe } from './components/features/body/body.pipe';
 
 import { AgGridModule  } from 'ag-grid-angular';
 import { RouterModule, Router, Routes } from '@angular/router';
+import { UserComponent } from './components/features/user/user.component';
+import { ReplicationComponent } from './components/features/replication/replication.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import { RouterModule, Router, Routes } from '@angular/router';
     FooterComponent,
     LoginComponent,
     BodyComponent,
-    UsersComponent
+    UsersComponent,
+    UserComponent,
+    ReplicationComponent
     
   ],
   imports: [
@@ -48,7 +54,9 @@ import { RouterModule, Router, Routes } from '@angular/router';
   providers: [
     HomeService,
     BodyService,
-    UserService
+    UserService,
+    UsersServices,
+    CacheService
   ],
   bootstrap: [AppComponent]
 })

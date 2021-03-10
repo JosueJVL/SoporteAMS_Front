@@ -103,7 +103,7 @@
                                 <label *ngIf="employee[2].IsActive" class="badge badge-success">Activo</label>
                                 <label *ngIf="!employee[2].IsActive" class="badge badge-danger">Desactivado</label>
                             </td>
-                            <td>{{ employee[2].LogIn }}</td>
+                            <!-- <td>{{ employee[2].LogIn }}</td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -134,7 +134,7 @@
                             <td *ngFor="let col of columnsEmployeeBusiness">
                                 {{ row[col.field] }}
                             </td>
-                            <td *ngIf="row.IsActivate">
+                            <td>
                                 <label *ngIf="row.IsActivate" class="badge badge-success">Activo</label>
                                 <label *ngIf="!row.IsActivate" class="badge badge-danger">Desactivado</label>
                             </td>

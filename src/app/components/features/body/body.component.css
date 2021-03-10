@@ -1,6 +1,6 @@
 .my-custom-scrollbar {
     position: sticky;
-    height: 400px;
+    height: 250px;
     overflow: auto;
 }
 
@@ -9,14 +9,13 @@
     top: 0;
     /* background-color: lightskyblue; */
     background-color: #60C1FC;
+    /* background-color: #60C1FC;001489 */
     /* background-color: #3393FF; */
-    font-size: 15px;
-    font-style: normal;
+    font-size: 13px;
 }
 
 .my-custom-scrollbar tbody td {
-    font-size: 14px;
-    font-style: normal;
+    font-size: 13px;
 }
 
 .table thead > tr 

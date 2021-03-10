@@ -46,7 +46,8 @@ export class UserService{
 
     // Crea el Objeto de Respuesta en un Arreglo
     private crearArreglo(responseObj: EmployeesModel){
-
+        console.log(responseObj);
+        
         if( responseObj.Employee == null ){
             return null;
         }
@@ -55,8 +56,15 @@ export class UserService{
 
         Object.keys( responseObj ).forEach(key => {
             const identifier = responseObj[key];
+            // console.log(identifier);
             identifier.id = key;
             employee.push( identifier );
+            // if(identifier.id != null)
+            // {
+            //     console.log(identifier);
+            //     identifier.id = key;
+            //     employee.push( identifier );
+            // }
         });
 
         return employee;

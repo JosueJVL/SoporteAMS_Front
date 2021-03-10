@@ -1,0 +1,56 @@
+.text-c-green{
+    color: #9ccc65;
+}
+
+.text-back.light{
+    color:#373a3c;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    border-radius: 20px;
+    content: "\f1e7";
+    background: #FFF67B;
+    position: relative;
+  }
+  
+.card:hover {
+    box-shadow: 0 8px 26px 0 rgba(0,0,0,0.2);
+}
+
+.card:before{
+    font-family: 'FontAwesome';
+    content: "\f1e7";
+    position: absolute;
+    color: rgba(0,0,0,0.2);
+    font-size: 150px;
+    line-height: 310px;
+    text-align: center;
+    transform:rotate(30deg);
+}
+
+.userStyle i{
+    background-color: #9ccc65;
+    color: #28a745;
+    font-size: 30px;
+    padding: 5px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 50%;
+    border:3px solid #fff;
+    position: absolute;
+    left: -30px;
+    top: 7.5px;
+    transform:rotate(-25deg);
+ }
+ .userStyle{
+    position: relative;
+    background: #9ccc65;
+    display: inline-block;
+    padding: 25px 20px 25px 45px;
+    border-radius: 5px;
+    color: #1F7F6B;
+}

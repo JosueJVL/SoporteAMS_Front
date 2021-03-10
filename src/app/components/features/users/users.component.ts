@@ -63,9 +63,9 @@ export class UsersComponent implements OnInit {
     {
       headerName: 'Status',
     },
-    {
-      headerName: 'FechaActualizacion',
-    }
+    // {
+    //   headerName: 'FechaActualizacion',
+    // }
   ];
 
   public columnsEmployeeBusiness: Array<any> = [
@@ -182,6 +182,8 @@ export class UsersComponent implements OnInit {
           allowOutsideClick: false
         });
         Swal.isLoading();
+        this.showMessagesInvalidate = true;
+        this.loadInformation = false;
       });
     }
   }

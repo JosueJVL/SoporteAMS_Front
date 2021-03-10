@@ -1,0 +1,43 @@
+<div  class="container" style="padding: 20px;">
+    <div class="card">
+        <div class="card-header bg-success">
+            <div class="row">
+                <div class="col-md-4 text-right">
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5 class="card-title text-white ">Validar la contraseña de Usuario</h5>
+                </div>
+                <div class="col-md-4 text-right">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch2" [(ngModel)]=isActived disable>
+                        <label class="text-white custom-control-label" for="customSwitch2">Validar en la Sucursal</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body text-center">
+            <h5 class="card-title">Ingrese el Usuario y Contraseña</h5>
+            <p class="userStyle"><i class="fa fa-bullhorn" aria-hidden="true"></i> <span _ngcontent-hgh-c113="" class="text-white"> Ingresa el <strong>LogIn</strong> del Usuario.</span></p>
+            <!-- <p class="userStyle"><i class="fa fa-bullhorn" aria-hidden="true"></i> <span _ngcontent-hgh-c113="" class="text-white"> El valor del Usuario se obtiene de la tabla de <strong>segUsuariosCat</strong> del campo <strong>logIn</strong></span></p> -->
+            <!-- <i class="fa fa-bullhorn" aria-hidden="true"></i><span _ngcontent-hgh-c113="" class="text-c-green"> El valor del Usuario se obtiene de la tabla de <strong>segUsuariosCat</strong> del campo <strong>logIn</strong></span> -->
+            <!-- <p _ngcontent-hgh-c113="" class="mb-3 mt-3 text-back.light">Solo regresa una bandera indicando si es verdadero o falso</p> -->
+            <div>
+                <div class="form-row" >
+                    <div class="form-group col-md-6">
+                        <label for="inputUser">LogIn del Usuario</label>
+                        <input type="text" [(ngModel)]="username" class="form-control" aria-label="Sizing example input" placeholder="LogIn del Usuario" maxlength="10" autocomplete="off" id="inputUser">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword">Contraseña</label>
+                        <input type="password" [(ngModel)]="passwordUser" (keyup.enter)="validateUser()" class="form-control" placeholder="Contraseña del Usuario" maxlength="10" id="inputPassword">
+                    </div>
+                    <div *ngIf="isActived" class="form-group col-md-6">
+                        <label for="inputSucursal">Codigo de la Sucursal</label>
+                        <input type="password" [(ngModel)]="cdigoSucursal" (keyup.enter)="validateUser()" class="form-control" placeholder="Contraseña del Usuario" maxlength="10" id="inputSucursal">
+                    </div>
+                </div>
+                <button class="btn btn-success btn-sm btn-round ng-tns-c94-59" (click)="validateUser()" >Validar Usuario</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,24 +10,17 @@ export class BodyService {
     // private apiUrl = '/api/Equipos';
     private equiposUrl = 'https://localhost:44355/api/Equipos';
     private versionUrl = 'https://localhost:44355/api/Version';
-    
+
     //Constructor
-    constructor(private http: HttpClient ){
-    }
-
-    finAll(){
-        return this.http.get(this.equiposUrl);
-    }
-
-    finAllInf():Observable<any[]>{
-        return this.http.get<any[]>(this.equiposUrl);
-    }
+    constructor(
+        private http: HttpClient
+    ){}
 
     getInfVersion():Observable<VersionModel>{
         return this.http.get<VersionModel>(this.versionUrl);
     }
 
-    getInfVersions():Observable<any[]>{
-        return this.http.get<any[]>(this.versionUrl);
+    getBusinessInformation(){
+        return this.http.get<any>(this.equiposUrl);
     }
 }
